@@ -1,14 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"github.com/name5566/leaf"
 	lconf "github.com/name5566/leaf/conf"
 	"server/conf"
 	"server/game"
+	"server/gamedata"
 	"server/gate"
 	"server/login"
-	"server/gamedata"
-	"fmt"
 	"server/mysql"
 )
 
@@ -21,7 +21,7 @@ func main() {
 	lconf.ProfilePath = conf.Server.ProfilePath
 
 	gamedata.LoadTables()
-	testData := gamedata.GetDataByID(2)
+	testData := gamedata.GetTestTableByID(2)
 	fmt.Println(testData.Name)
 
 	leaf.Run(
@@ -32,6 +32,6 @@ func main() {
 
 }
 
-func  InitDBTable()  {
+func InitDBTable() {
 
 }
