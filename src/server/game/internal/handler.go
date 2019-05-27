@@ -3,7 +3,6 @@ package internal
 import (
 	"fmt"
 	"github.com/name5566/leaf/gate"
-	"github.com/name5566/leaf/log"
 	"reflect"
 	"server/msg"
 )
@@ -23,11 +22,12 @@ func handleTosChat(args []interface{}) {
 	a := args[1].(gate.Agent)
 
 	// 输出收到的消息的内容
-	log.Debug("hello %v", m.Name)
-	fmt.Println("hello %v", m.Name)
+	//log.Debug("hello %s", m.Name)
+	fmt.Println(m.Name)
+	fmt.Println(m.Content)
 	var err gate.Agent = nil
 	if a != err {
-		fmt.Println(" != nil")
+		fmt.Println("----------正常连接------------")
 	}
 
 	//给发送者回应一个 Hello 消息
